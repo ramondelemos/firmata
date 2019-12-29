@@ -6,28 +6,194 @@ defmodule Firmata.Protocol.Sysex.SysexTest do
 
   doctest Firmata.Protocol.Sysex
 
-  @sysex <<127,127,0,1,11,1,1,1,4,14,127,0,1,11,1,1,1,3,8,4,14,127,0,1,11,1,1,1,4,14,127,0,1,11,1,1,1,3,8,4,14,127,0,1,11,1,1,1,3,8,4,14,127,0,1,11,1,1,1,4,14,127,0,1,11,1,1,1,4,14,127,0,1,11,1,1,1,3,8,4,14,127,0,1,11,1,1,1,3,8,4,14,127,0,1,11,1,1,1,3,8,4,14,127,0,1,11,1,1,1,4,14,127,0,1,11,1,1,1,4,14,127,0,1,11,1,1,1,2,10,4,14,127,0,1,11,1,1,1,2,10,4,14,127,0,1,11,1,1,1,2,10,4,14,127,0,1,11,1,1,1,2,10,4,14,127,0,1,11,1,1,1,2,10,4,14,6,1,127,0,1,11,1,1,1,2,10,4,14,6,1,127>>
+  @sysex <<127, 127, 0, 1, 11, 1, 1, 1, 4, 14, 127, 0, 1, 11, 1, 1, 1, 3, 8, 4, 14, 127, 0, 1, 11,
+           1, 1, 1, 4, 14, 127, 0, 1, 11, 1, 1, 1, 3, 8, 4, 14, 127, 0, 1, 11, 1, 1, 1, 3, 8, 4,
+           14, 127, 0, 1, 11, 1, 1, 1, 4, 14, 127, 0, 1, 11, 1, 1, 1, 4, 14, 127, 0, 1, 11, 1, 1,
+           1, 3, 8, 4, 14, 127, 0, 1, 11, 1, 1, 1, 3, 8, 4, 14, 127, 0, 1, 11, 1, 1, 1, 3, 8, 4,
+           14, 127, 0, 1, 11, 1, 1, 1, 4, 14, 127, 0, 1, 11, 1, 1, 1, 4, 14, 127, 0, 1, 11, 1, 1,
+           1, 2, 10, 4, 14, 127, 0, 1, 11, 1, 1, 1, 2, 10, 4, 14, 127, 0, 1, 11, 1, 1, 1, 2, 10,
+           4, 14, 127, 0, 1, 11, 1, 1, 1, 2, 10, 4, 14, 127, 0, 1, 11, 1, 1, 1, 2, 10, 4, 14, 6,
+           1, 127, 0, 1, 11, 1, 1, 1, 2, 10, 4, 14, 6, 1, 127>>
 
   @pins [
-    [supported_modes: [6, 4, 2, 1, 0], mode: 16],
-    [supported_modes: [6, 4, 2, 1, 0], mode: 16],
-    [supported_modes: [4, 2, 1, 0], mode: 16],
-    [supported_modes: [4, 2, 1, 0], mode: 16],
-    [supported_modes: [4, 2, 1, 0], mode: 16],
-    [supported_modes: [4, 2, 1, 0], mode: 16],
-    [supported_modes: [4, 1, 0], mode: 16],
-    [supported_modes: [4, 1, 0], mode: 16],
-    [supported_modes: [4, 3, 1, 0], mode: 16],
-    [supported_modes: [4, 3, 1, 0], mode: 16],
-    [supported_modes: [4, 3, 1, 0], mode: 16],
-    [supported_modes: [4, 1, 0], mode: 16],
-    [supported_modes: [4, 1, 0], mode: 16],
-    [supported_modes: [4, 3, 1, 0], mode: 16],
-    [supported_modes: [4, 3, 1, 0], mode: 16],
-    [supported_modes: [4, 1, 0], mode: 16],
-    [supported_modes: [4, 3, 1, 0], mode: 16],
-    [supported_modes: [4, 1, 0], mode: 16],
-    [supported_modes: [], mode: 16], [supported_modes: [], mode: 16]
+    [
+      supported_modes: [
+        {:input_pullup, 11},
+        {:i2c, 6},
+        {:servo, 4},
+        {:analog, 2},
+        {:output, 1},
+        {:input, 0}
+      ],
+      mode: nil
+    ],
+    [
+      supported_modes: [
+        {:input_pullup, 11},
+        {:i2c, 6},
+        {:servo, 4},
+        {:analog, 2},
+        {:output, 1},
+        {:input, 0}
+      ],
+      mode: nil
+    ],
+    [
+      supported_modes: [
+        {:input_pullup, 11},
+        {:servo, 4},
+        {:analog, 2},
+        {:output, 1},
+        {:input, 0}
+      ],
+      mode: nil
+    ],
+    [
+      supported_modes: [
+        {:input_pullup, 11},
+        {:servo, 4},
+        {:analog, 2},
+        {:output, 1},
+        {:input, 0}
+      ],
+      mode: nil
+    ],
+    [
+      supported_modes: [
+        {:input_pullup, 11},
+        {:servo, 4},
+        {:analog, 2},
+        {:output, 1},
+        {:input, 0}
+      ],
+      mode: nil
+    ],
+    [
+      supported_modes: [
+        {:input_pullup, 11},
+        {:servo, 4},
+        {:analog, 2},
+        {:output, 1},
+        {:input, 0}
+      ],
+      mode: nil
+    ],
+    [
+      supported_modes: [
+        {:input_pullup, 11},
+        {:servo, 4},
+        {:output, 1},
+        {:input, 0}
+      ],
+      mode: nil
+    ],
+    [
+      supported_modes: [
+        {:input_pullup, 11},
+        {:servo, 4},
+        {:output, 1},
+        {:input, 0}
+      ],
+      mode: nil
+    ],
+    [
+      supported_modes: [
+        {:input_pullup, 11},
+        {:servo, 4},
+        {:pwm, 3},
+        {:output, 1},
+        {:input, 0}
+      ],
+      mode: nil
+    ],
+    [
+      supported_modes: [
+        {:input_pullup, 11},
+        {:servo, 4},
+        {:pwm, 3},
+        {:output, 1},
+        {:input, 0}
+      ],
+      mode: nil
+    ],
+    [
+      supported_modes: [
+        {:input_pullup, 11},
+        {:servo, 4},
+        {:pwm, 3},
+        {:output, 1},
+        {:input, 0}
+      ],
+      mode: nil
+    ],
+    [
+      supported_modes: [
+        {:input_pullup, 11},
+        {:servo, 4},
+        {:output, 1},
+        {:input, 0}
+      ],
+      mode: nil
+    ],
+    [
+      supported_modes: [
+        {:input_pullup, 11},
+        {:servo, 4},
+        {:output, 1},
+        {:input, 0}
+      ],
+      mode: nil
+    ],
+    [
+      supported_modes: [
+        {:input_pullup, 11},
+        {:servo, 4},
+        {:pwm, 3},
+        {:output, 1},
+        {:input, 0}
+      ],
+      mode: nil
+    ],
+    [
+      supported_modes: [
+        {:input_pullup, 11},
+        {:servo, 4},
+        {:pwm, 3},
+        {:output, 1},
+        {:input, 0}
+      ],
+      mode: nil
+    ],
+    [
+      supported_modes: [
+        {:input_pullup, 11},
+        {:servo, 4},
+        {:output, 1},
+        {:input, 0}
+      ],
+      mode: nil
+    ],
+    [
+      supported_modes: [
+        {:input_pullup, 11},
+        {:servo, 4},
+        {:pwm, 3},
+        {:output, 1},
+        {:input, 0}
+      ],
+      mode: nil
+    ],
+    [
+      supported_modes: [
+        {:input_pullup, 11},
+        {:servo, 4},
+        {:output, 1},
+        {:input, 0}
+      ],
+      mode: nil
+    ],
+    [supported_modes: [], mode: nil],
+    [supported_modes: [], mode: nil]
   ]
 
   test "compatibility_response" do
